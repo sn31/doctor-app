@@ -14,36 +14,44 @@ $(document).ready(function() {
   $("#submit").click(function() {
     let searchParameter = $("#searchParameter").val();
     $("#searchParameter").val("");
-  });
-  let newDoctorInfo = new DoctorInfo();
-  let promise = newDoctorInfo.getDoctor(searchType, searchParameter);
 
-  promise.then(
-    function(response) {
-      let body = JSON.parse(respone);
-      for (let office in body) {
-        $("#practiceName").append(
-          `Practice's Name: ${body["data"][office].name}`
-        );
-        let acceptingStatus;
-        acceptingStatus = (body["data"].accepts_new_patients === true) ? "" : "not ";
-        $("#accepting").append(
-            `This office is ${acceptingStatus}accepting new patients.`
+    let newDoctorInfo = new DoctorInfo();
+    let promise = newDoctorInfo.getDoctor(searchType, searchParameter);
+
+    promise.then(
+      function(response) {
+        let body = JSON.parse(response);
+        console.log("here");
+        console.log(body.data[0].practices[0].name);
+        for (let doc in body.data) {
+          let path = body.data[doc].practices[0];
+
+          $("#firstName").append(`${body.data[doc].profile.first_name}<br>`);
+          $("#lastName").append(`${body.data[doc].profile.last_name}<br>`);
+          $("#address").append(
+            `Address: ${path.visit_address.street}, ${path.visit_address.city}<br>`
           );
-        for (let doc in office["doctors"]) {
-          $("#firstName").append(`<li>
-            First Name: ${doc["profile"].first_name}</li>`
-          );
-          $("#lastName").append(`<li>
-            Last Name: ${doc["profile"].last_name}</li>`
+          $("#phone").append(`${path.phones[0].number}<br>`);
+          if (!path.website == undefined)
+          {
+          $("#web").append(`${path.website}<br>`);
+          }
+          else
+          {
+            $("#web").append(`N/A<br>`);
+          }
+          let acceptingStatus;
+          acceptingStatus = path.accepts_new_patients === true ? "Yes" : "No";
+          $("#accepting").append(
+            `${acceptingStatus}<br>`
           );
         }
+      },
+      function(error) {
+        $("#errors").text(
+          `There was an error processing your request: ${error.message}`
+        );
       }
-    },
-    function(error) {
-      $("#errors").text(
-        `There was an error processing your request: ${error.message}`
-      );
-    }
-  );
+    );
+  });
 });
