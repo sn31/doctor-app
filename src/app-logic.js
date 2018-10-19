@@ -1,10 +1,10 @@
 export class DoctorInfo
 {
-  getDoctor(searchType,searchParameter)
+  getDoctor(searchType,searchParameter,location)
   {
     return new Promise(function(resolve,reject){
       let request = new XMLHttpRequest();
-      let url = `https://api.betterdoctor.com/2016-03-01/doctors?${searchType}=${searchParameter}&location=wa-seattle&user_key=${process.env.exports.apiKey}`;
+      let url = `https://api.betterdoctor.com/2016-03-01/doctors?${searchType}=${searchParameter}&location=${location}&user_key=${process.env.exports.apiKey}`;
       request.onload = function() {
         if(this.status === 200)
         {

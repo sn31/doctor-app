@@ -17,9 +17,12 @@ $(document).ready(function() {
   $("#submit").click(function() {
     let searchParameter = $("#searchParameter").val();
     $("#searchParameter").val("");
+    let location = $("#location").val();
+    $("#location").val("");
     $(".result p").val("");
+
     let newDoctorInfo = new DoctorInfo();
-    let promise = newDoctorInfo.getDoctor(searchType, searchParameter);
+    let promise = newDoctorInfo.getDoctor(searchType, searchParameter,location);
 
     promise.then(
       function(response) {
