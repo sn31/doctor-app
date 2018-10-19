@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Doctor Finder</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Find A Doctor Today!</h1>
+        <div class="dropdown show">
+            <a class="btn btn-success dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Search By
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="options">
+                <a class="dropdown-item" id="medIssue">Medical Issue</a>
+                <a class="dropdown-item" id="docName">Doctor's Name</a>
+            </div>
+            <hr>
+        </div>
+        <label for="searchType">Enter
+            <span id="searchType"></span>:</label>
+        <input id="searchParameter" type="text">
+        <button class="btn btn-info" id="submit">Find A Doctor</button>
+    </div>
+</body>
+
+</html>
