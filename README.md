@@ -20,7 +20,7 @@ This website uses BetterDoctorAPI.
 
 Please note that you must provide your own API key to continue developing/experimenthing with this project. Here are the steps to do so:
 
-1. Go to [https://developer.betterdoctor.com/](BetterDoctorAPI) and hit "Get a free API Key"
+1. Go to https://developer.betterdoctor.com/ and hit "Sign Up" to get a free key.
 
 2. Create a .env (environment variables) file at the top level of the directory with the following content:
 
