@@ -7,21 +7,35 @@
 
 <body>
     <div class="container">
-        <h1>Find A Doctor Today!</h1>
-        <div class="dropdown show">
-            <a class="btn btn-success dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Search By
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="options">
-                <a class="dropdown-item" id="query">Medical Issue</a>
-                <a class="dropdown-item" id="name">Doctor's Name</a>
+        <div class="search">
+            <h1>Find A Doctor Today!</h1>
+            <div class="dropdown show">
+                <a class="btn btn-success dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Search By
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="options">
+                    <a class="dropdown-item" id="query">Medical Issue</a>
+                    <a class="dropdown-item" id="name">Doctor's Name</a>
+                </div>
+                <hr>
             </div>
-            <hr>
+            <label for="searchType">Enter
+                <span id="searchType"></span>:</label>
+            <input id="searchParameter" type="text">
+            <button class="btn btn-info" id="submit">Find A Doctor</button>
         </div>
-        <label for="searchType">Enter
-            <span id="searchType"></span>:</label>
-        <input id="searchParameter" type="text">
-        <button class="btn btn-info" id="submit">Find A Doctor</button>
+        <div class="result">
+            <div class="row" id="resultAvail">
+                <div class="col">First Name<p id="firstName"></p></div>
+                <div class="col">Last Name<p id="lastName"></p></div>
+                <div class="col">Address<p id="address"></p></div>
+                <div class="col">Phone<p id="phone"></p></div>
+                <div class="col">Web<p id="web"></p></div>
+                <div class="col">Accepting New Patient<p id="accepting"></p> </div>   
+            </div>
+            <div id="resultNone"></div>
+            <div id="errors"></div>
+        </div>
     </div>
 </body>
 
