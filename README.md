@@ -6,7 +6,7 @@
 
 As we all know, everybody needs to see a doctor sometimes. But finding a doctor that provides the services you need nearby can be time consuming. This is a website where users may enter a medical issue (ie: “sore throat”, "rash", etc.) into a form, submit it, and receive a list of doctors in _Seattle_ who can treat their medical issue.
 
-This website uses [https://developer.betterdoctor.com/](BetterDoctorAPI).
+This website uses BetterDoctorAPI.
 
 ## Test Driven Development Specs
 
