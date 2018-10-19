@@ -1,5 +1,30 @@
-/* body{
-    background-image: url("./liquid.jpg");
-    background-repeat: cover
-    
-} */
+body{
+    background-image: url("./background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.search
+{
+    background-color: rgba(56, 150, 119, 0.8)
+}
+
+h1
+{
+    text-align: center;
+}
+.dropdown, .button-group, .inputs
+
+{
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+    margin-bottom: 10px;
+}
+
+.result
+{
+    background-color: rgba(213, 231, 225, 0.904)
+}
+
