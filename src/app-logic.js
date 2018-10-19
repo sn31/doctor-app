@@ -1,6 +1,6 @@
 export class DoctorInfo
 {
-    getDocByName(searchType,searchParameter)
+    getDoctor(searchType,searchParameter)
     {
         return new Promise(function(resolve,reject){
             let request = new XMLHttpRequest();
